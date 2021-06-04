@@ -1,0 +1,24 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% load martortags %}
+
+{% block content %}
+
+<h1 class="text-center mt-5" id="blogdetailtitle">{{ post.title }}</h1>
+
+<h5 class="text-center text-muted mb-5">{{ post.date|date:'F jS Y' }}</h5>
+<h6 class="text-center text-muted mb-5">Subject: {{ post.subject }}</h6>
+
+<hr>
+
+<div>
+
+  {{ post.body|safe }}
+
+  {{ post.description|safe }}
+
+  {{ post.martorfield|safe_markdown }}
+
+</div>
+
+{% endblock %}
