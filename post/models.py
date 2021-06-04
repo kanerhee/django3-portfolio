@@ -8,7 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     subject = models.CharField(max_length=200, blank=True, null=True)
     date = models.DateField()
-
+    
     martorfield = MartorField(blank=True, null=True)
     # rtfield = RichTextField(blank=True, null=True)
     # mdfield = MarkdownxField(blank=True, null=True)

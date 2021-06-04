@@ -8,5 +8,5 @@ def all_posts(request):
     return render(request, 'post/all_posts.html', {'posts':posts})
 
 def detail(request, post_id):
-    post = get_object_or_404(Blog, pk=blog_id)
+    post = get_object_or_404(Post, pk=post_id)
     return render(request, 'post/detail.html', {'post':post})
