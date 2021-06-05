@@ -9,7 +9,12 @@ class Project(models.Model):
     url = models.URLField(blank=True)
     date = models.DateField()
 
+    subject = models.TextField(blank=True, null=True)
+
     martorfield = MartorField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    # def get_subject(self):
+    #     return json.loads(self.subject)

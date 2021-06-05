@@ -19,6 +19,7 @@ from . import views
 app_name = 'project'
 
 urlpatterns = [
+
     path('', views.all_projects, name='all_projects'),                # for homepage of the portfolio
     path('<int:project_id>', views.detail, name='detail'),              # for portfolio posts
 ]
