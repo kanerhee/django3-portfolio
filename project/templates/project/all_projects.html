@@ -1,12 +1,20 @@
 {% extends "project/base.html" %}
-
 {% load static %}
+{% load martortags %}
 
 {% block content %}
+<hr>
 
-<h1 id="blogtitle" class="font-weight-bold text-center">Projects</h1>
+<h3 id="" class="font-weight-bold text-center">Projects & Portfolio</h3>
 
-<h3 class="text-center mb-5">Kane has written {{ projects.count }} project{{ projects.count|pluralize }}</h3>
+<div class="row justify-content-center my-3">
+  <p>
+  Any past projects I've worked.
+  </p>
+</div>
+<hr>
+
+<h5 class="text-center mb-5">I've shared {{ projects.count }} project{{ projects.count|pluralize }}</h5>
 
 {% for project in projects %}
 <hr>

@@ -1,12 +1,21 @@
 {% extends "project/base.html" %}
-
 {% load static %}
+{% load martortags %}
+
 
 {% block content %}
+<hr>
 
-<h1 id="blogtitle" class="font-weight-bold text-center">Posts</h1>
+<h3 id="" class="font-weight-bold text-center">Posts & Reference</h3>
 
-<h3 class="text-center mb-5">Kane has written {{ posts.count }} Post{{ posts.count|pluralize }}</h3>
+<div class="row justify-content-center my-3">
+  <p>
+  Any useful links, references, or documentation I put together is kept here.
+  </p>
+</div>
+<hr>
+
+<h6 class="text-center mb-5">I've written {{ posts.count }} Post{{ posts.count|pluralize }}</h6>
 
 {% for post in posts %}
 <div class="row justify-content-center my-3">
@@ -14,8 +23,8 @@
     <a href="{% url 'post:detail' post.id %}">
       <h5>{{ post.title }}</h5>
     </a>
-    <h6 class="text-muted">{{ post.date|date:'M d Y'|upper }} -  {{ post.martorfield|striptags|truncatechars:100 }}</h6>
-    <h6></h6>
+    <h6 class="text-muted">Subject: {{ post.subject }}</h6>
+    <h6 class="text-muted">{{ post.date|date:'M d Y'|upper }}</h6>
   </div>
 </div>
 {% endfor %}
